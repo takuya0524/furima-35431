@@ -48,6 +48,7 @@
 ### Association
 - belongs_to :order
 
+
 ## orders table
 
 | Column             | Type                | Options                 |
