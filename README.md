@@ -4,7 +4,7 @@
 
 | Column             | Type                | Options                 |
 |--------------------|---------------------|-------------------------|
-| email              | string              | unique: true            |
+| email              | string              | unique: true null: false            |
 | password           | string              | null: false             |
 | nickname           | string              | null: false             |
 | family_name        | string              | null: false             |
@@ -29,6 +29,7 @@
 | locality_id        | integer             | null: false             |
 | days_id            | integer             | null: false             |
 | price              | integer             | null: false             |
+| user_id            | integer             | null: false             |
 
 ### Association
 - belongs_to :user
@@ -41,19 +42,19 @@
 | postal_code        | string              | null: false             |
 | active_hash        | integer             | null: false             |
 | city               | string              | null: false             |
-| street_address     | text                | null: false             |
-| building_name      | text                |                         |
+| street_address     | string              | null: false             |
+| building_name      | string              |                         |
 | telephone_number   | string              | null: false             |
 
 ### Association
-- belongs_to :order
+- has_one :order
 
 ## orders table
 
 | Column             | Type                | Options                 |
 |--------------------|---------------------|-------------------------|
-| user_id            | integer             |                         |
-| items_id           | integer             |                         |
+| user            | references             | foreign_key: true                      |
+| items           | references             | foreign_key: true                      |
 
 ### Association
-- has_one :delivery_address
+- belongs_to :delivery_address
