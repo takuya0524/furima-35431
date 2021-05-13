@@ -23,11 +23,11 @@
 |--------------------|---------------------|-------------------------|
 | name               | string              | null: false             |
 | description        | text                | null: false             |
-| category           | integer             | null: false             |
-| state              | integer             | null: false             |
-| burden             | integer             | null: false             |
-| locality           | integer             | null: false             |
-| days               | integer             | null: false             |
+| category_id        | integer             | null: false             |
+| state_id           | integer             | null: false             |
+| burden_id          | integer             | null: false             |
+| locality_id        | integer             | null: false             |
+| days_id            | integer             | null: false             |
 | price              | integer             | null: false             |
 
 ### Association
@@ -43,7 +43,7 @@
 | city               | string              | null: false             |
 | street_address     | text                | null: false             |
 | building_name      | text                |                         |
-| telephone_number   | text                | null: false             |
+| telephone_number   | string              | null: false             |
 
 ### Association
 - belongs_to :order
