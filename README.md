@@ -4,14 +4,14 @@
 
 | Column             | Type                | Options                 |
 |--------------------|---------------------|-------------------------|
-| email              | string              | null: false             |
+| email              | string              | unique: true            |
 | password           | string              | null: false             |
 | nickname           | string              | null: false             |
 | family_name        | string              | null: false             |
 | first_name         | string              | null: false             |
 | family_name_kana   | string              | null: false             |
 | first_name_kana    | string              | null: false             |
-| birthday           | datetime            | null: false             |
+| birthday           | date                | null: false             |
 
 ### Association
 - has_many :items
@@ -23,11 +23,11 @@
 |--------------------|---------------------|-------------------------|
 | name               | string              | null: false             |
 | description        | text                | null: false             |
-| category           | boolean             | null: false             |
-| state              | boolean             | null: false             |
-| burden             | boolean             | null: false             |
-| locality           | boolean             | null: false             |
-| days               | boolean             | null: false             |
+| category           | integer             | null: false             |
+| state              | integer             | null: false             |
+| burden             | integer             | null: false             |
+| locality           | integer             | null: false             |
+| days               | integer             | null: false             |
 | price              | integer             | null: false             |
 
 ### Association
@@ -38,8 +38,8 @@
 
 | Column             | Type                | Options                 |
 |--------------------|---------------------|-------------------------|
-| postal_code        | integer             | null: false             |
-| province           | boolean             | null: false             |
+| postal_code        | string              | null: false             |
+| active_hash        | integer             | null: false             |
 | city               | string              | null: false             |
 | street_address     | text                | null: false             |
 | building_name      | text                |                         |
