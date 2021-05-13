@@ -29,7 +29,7 @@
 | locality_id        | integer             | null: false             |
 | days_id            | integer             | null: false             |
 | price              | integer             | null: false             |
-| user_id            | references          | null: false             |
+| user               | references          | null: false foreign_key: true            |
 
 ### Association
 - belongs_to :user
@@ -45,7 +45,7 @@
 | street_address     | string              | null: false             |
 | building_name      | string              |                         |
 | telephone_number   | string              | null: false             |
-| order_id           | references          | null: false             |
+| order              | references          | null: false foreign_key: true            |
 
 ### Association
 - has_one :order
