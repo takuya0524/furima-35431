@@ -1,59 +1,24 @@
-# DB 設計
+# README
 
-## users table
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-| Column             | Type                | Options                 |
-|--------------------|---------------------|-------------------------|
-| email              | string              | null: false             |
-| password           | string              | null: false             |
-| nickname           | string              | null: false             |
-| family_name        | string              | null: false             |
-| first_name         | string              | null: false             |
-| family_name_kana   | string              | null: false             |
-| first_name_kana    | string              | null: false             |
-| birthday           | datetime            | null: false             |
+Things you may want to cover:
 
-### Association
-- has_many :orders
-- has_many :items
+* Ruby version
 
-## items table
+* System dependencies
 
-| Column             | Type                | Options                 |
-|--------------------|---------------------|-------------------------|
-| name               | string              | null: false             |
-| description        | text                | null: false             |
-| category           | boolean             | null: false             |
-| state              | boolean             | null: false             |
-| burden             | boolean             | null: false             |
-| locality           | boolean             | null: false             |
-| days               | boolean             | null: false             |
-| price              | integer             | null: false             |
+* Configuration
 
-### Association
-- belongs_to :user
-- has_one :order
+* Database creation
 
-## delivery_address table
+* Database initialization
 
-| Column             | Type                | Options                 |
-|--------------------|---------------------|-------------------------|
-| postal_code        | integer             | null: false             |
-| province           | boolean             | null: false             |
-| city               | string              | null: false             |
-| street_address     | text                | null: false             |
-| building_name      | text                |                         |
-| telephone_number   | text                | null: false             |
+* How to run the test suite
 
-### Association
-- belongs_to :order
+* Services (job queues, cache servers, search engines, etc.)
 
-## orders table
+* Deployment instructions
 
-| Column             | Type                | Options                 |
-|--------------------|---------------------|-------------------------|
-| user_id            | integer             |                         |
-| items_id           | integer             |                         |
-
-### Association
-- has_one :delivery_address
+* ...
