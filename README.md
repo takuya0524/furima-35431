@@ -5,7 +5,7 @@
 | Column             | Type                | Options                 |
 |--------------------|---------------------|-------------------------|
 | email              | string              | unique: true null: false            |
-| password           | string              | null: false             |
+| encrypted_password | string              | null: false             |
 | nickname           | string              | null: false             |
 | family_name        | string              | null: false             |
 | first_name         | string              | null: false             |
@@ -26,7 +26,7 @@
 | category_id        | integer             | null: false             |
 | state_id           | integer             | null: false             |
 | burden_id          | integer             | null: false             |
-| active_hash        | integer             | null: false             |
+| locality_id        | integer             | null: false             |
 | days_id            | integer             | null: false             |
 | price              | integer             | null: false             |
 | user_id            | references          | null: false             |
@@ -40,7 +40,7 @@
 | Column             | Type                | Options                 |
 |--------------------|---------------------|-------------------------|
 | postal_code        | string              | null: false             |
-| active_hash        | integer             | null: false             |
+| locality_id        | integer             | null: false             |
 | city               | string              | null: false             |
 | street_address     | string              | null: false             |
 | building_name      | string              |                         |
