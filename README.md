@@ -35,7 +35,7 @@
 - belongs_to :user
 - has_one :order
 
-## delivery_address table
+## delivery_addresses table
 
 | Column             | Type                | Options                 |
 |--------------------|---------------------|-------------------------|
@@ -48,7 +48,7 @@
 | order              | references          | null: false foreign_key: true            |
 
 ### Association
-- has_one :order
+- belongs_to :order
 
 ## orders table
 
@@ -59,3 +59,5 @@
 
 ### Association
 - belongs_to :delivery_address
+- belongs_to :user
+- belongs_to :item
