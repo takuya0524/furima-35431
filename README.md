@@ -58,6 +58,6 @@
 | item            | references             | foreign_key: true                      |
 
 ### Association
-- belongs_to :delivery_address
+- has_one :delivery_address
 - belongs_to :user
 - belongs_to :item
