@@ -26,10 +26,10 @@
 | category_id        | integer             | null: false             |
 | state_id           | integer             | null: false             |
 | burden_id          | integer             | null: false             |
-| locality_id        | integer             | null: false             |
+| active_hash        | integer             | null: false             |
 | days_id            | integer             | null: false             |
 | price              | integer             | null: false             |
-| user_id            | integer             | null: false             |
+| user_id            | references          | null: false             |
 
 ### Association
 - belongs_to :user
@@ -45,6 +45,7 @@
 | street_address     | string              | null: false             |
 | building_name      | string              |                         |
 | telephone_number   | string              | null: false             |
+| order_id           | references          | null: false             |
 
 ### Association
 - has_one :order
@@ -54,7 +55,7 @@
 | Column             | Type                | Options                 |
 |--------------------|---------------------|-------------------------|
 | user            | references             | foreign_key: true                      |
-| items           | references             | foreign_key: true                      |
+| item            | references             | foreign_key: true                      |
 
 ### Association
 - belongs_to :delivery_address
