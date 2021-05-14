@@ -54,8 +54,8 @@
 
 | Column             | Type                | Options                 |
 |--------------------|---------------------|-------------------------|
-| user            | references             | foreign_key: true                      |
-| item            | references             | foreign_key: true                      |
+| user               | references             | foreign_key: true                      |
+| item               | references             | foreign_key: true                      |
 
 ### Association
 - has_one :delivery_address
