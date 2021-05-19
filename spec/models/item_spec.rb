@@ -39,9 +39,9 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include "State is not a number"
       end
       it '商品の状態について1が選択された場合保存できないこと' do
-        @item.state_id = nil
+        @item.state_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include "State is not a number"
+        expect(@item.errors.full_messages).to include "State must be other than 1"
       end
       it '配送料の負担についての情報が必須であること' do
         @item.burden_id = nil
@@ -49,9 +49,9 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include "Burden is not a number"
       end
       it '配送料の負担について1が選択された場合保存できないこと' do
-        @item.burden_id = nil
+        @item.burden_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include "Burden is not a number"
+        expect(@item.errors.full_messages).to include "Burden must be other than 1"
       end
       it '発送元の地域についての情報が必須であること' do
         @item.prefecture_id = nil
@@ -59,9 +59,9 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include "Prefecture is not a number"
       end
       it '発送元の地域について1が選択された場合保存できないこと' do
-        @item.prefecture_id = nil
+        @item.prefecture_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include "Prefecture is not a number"
+        expect(@item.errors.full_messages).to include "Prefecture must be other than 1"
       end
       it '発送までの日数についての情報が必須であること'do
         @item.days_id = nil
@@ -69,9 +69,9 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include "Days is not a number"
       end
       it '発送までの日数について1が選択された場合保存できないこと'do
-        @item.days_id = nil
+        @item.days_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include "Days is not a number"
+        expect(@item.errors.full_messages).to include "Days must be other than 1"
       end
       it '販売価格についての情報が必須であること' do
         @item.price = nil
