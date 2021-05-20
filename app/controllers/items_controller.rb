@@ -4,7 +4,9 @@ class ItemsController < ApplicationController
 
 
   def index
-    @items = Item.all
+    @items = Item.includes(:user).order("created_at DESC")
+    query = "SELECT * FROM items"
+    @items = Item.find_by_sql(query)
   end
 
   def  new
