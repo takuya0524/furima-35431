@@ -20,6 +20,6 @@ class Item < ApplicationRecord
   validates :state_id
   validates :burden_id
   validates :prefecture_id
-  validates :days_id
+  validates :delivery_day_id
   end
 end

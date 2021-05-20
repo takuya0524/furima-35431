@@ -70,12 +70,12 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include "Prefecture must be other than 1"
       end
       it '発送までの日数についての情報が必須であること'do
-        @item.days_id = nil
+        @item.delivery_day_id = nil
         @item.valid?
         expect(@item.errors.full_messages).to include "Days is not a number"
       end
       it '発送までの日数について1が選択された場合保存できないこと'do
-        @item.days_id = 1
+        @item.delivery_day_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include "Days must be other than 1"
       end
