@@ -36,7 +36,6 @@ RSpec.describe Item, type: :model do
       it 'カテゴリーの情報について1が選択された場合保存できないこと' do
         @item.category_id = 1
         @item.valid?
-        binding.pry
         expect(@item.errors.full_messages).to include "Category must be other than 1"
       end
       it '商品の状態についての情報が必須であること' do
