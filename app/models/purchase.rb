@@ -10,6 +10,8 @@ class Purchase
     validates :street_address
     validates :telephone_number
     validates :token
+    validates :user_id
+    validates :item_id
   end
   with_options numericality: { other_than: 1 } do
     validates :prefecture_id

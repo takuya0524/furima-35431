@@ -13,6 +13,11 @@ RSpec.describe Purchase, type: :model do
       it 'すべての情報があれば購入できる' do
         expect(@purchase).to be_valid
       end
+      it '建物名が抜けていても登録できること' do
+        @purchase.building_name = nil
+        @purchase.valid?
+        expect(@purchase).to be_valid
+      end
     end
 
     context  '商品が購入できない時' do
@@ -54,8 +59,17 @@ RSpec.describe Purchase, type: :model do
       it 'tokenが必須であること' do
         @purchase.token = nil
         @purchase.valid?
-        binding.pry
         expect(@purchase.errors.full_messages).to include "Token can't be blank"
+      end
+      it 'user_idが空だと購入できない' do
+        @purchase.user_id = ''
+        @purchase.valid?
+        expect(@purchase.errors.full_messages).to include "User can't be blank"
+      end
+      it 'item_idが空だと購入できない' do
+        @purchase.item_id = ''
+        @purchase.valid?
+        expect(@purchase.errors.full_messages).to include "Item can't be blank"
       end
     end
   end
