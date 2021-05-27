@@ -71,6 +71,11 @@ RSpec.describe Purchase, type: :model do
         @purchase.valid?
         expect(@purchase.errors.full_messages).to include "Item can't be blank"
       end
+      it 'idが1の選択肢を選択すると登録できない' do
+        @item.prefecture_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include "Prefecture must be other than 1"
+      end
     end
   end
 end
