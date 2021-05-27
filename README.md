@@ -40,7 +40,7 @@
 | Column             | Type                | Options                 |
 |--------------------|---------------------|-------------------------|
 | postal_code        | string              | null: false             |
-| locality_id        | integer             | null: false             |
+| prefecture_id      | integer             | null: false             |
 | city               | string              | null: false             |
 | street_address     | string              | null: false             |
 | building_name      | string              |                         |
@@ -54,8 +54,8 @@
 
 | Column             | Type                | Options                 |
 |--------------------|---------------------|-------------------------|
-| user               | references             | foreign_key: true                      |
-| item               | references             | foreign_key: true                      |
+| user               | references          | foreign_key: true       |
+| item               | references          | foreign_key: true       |
 
 ### Association
 - has_one :delivery_address
