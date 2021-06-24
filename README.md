@@ -16,6 +16,7 @@
 ### Association
 - has_many :items
 - has_many :orders
+- has_many :comments
 
 ## items table
 
@@ -34,6 +35,7 @@
 ### Association
 - belongs_to :user
 - has_one :order
+- has_many :comments
 
 ## delivery_addresses table
 
